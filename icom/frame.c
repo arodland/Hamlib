@@ -373,6 +373,7 @@ int rig2icom_mode(RIG *rig, rmode_t mode, pbwidth_t width,
 
     switch (mode)
     {
+    case RIG_MODE_PKTAM:
     case RIG_MODE_AM:   icmode = S_AM; break;
 
     case RIG_MODE_AMN:  icmode = S_AMN; break;
@@ -383,8 +384,10 @@ int rig2icom_mode(RIG *rig, rmode_t mode, pbwidth_t width,
 
     case RIG_MODE_CWR:  icmode = S_CWR; break;
 
+    case RIG_MODE_PKTUSB:
     case RIG_MODE_USB:  icmode = S_USB; break;
 
+    case RIG_MODE_PKTLSB:
     case RIG_MODE_LSB:  icmode = S_LSB; break;
 
     case RIG_MODE_RTTY: icmode = S_RTTY; break;

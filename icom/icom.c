@@ -1206,7 +1206,7 @@ int icom_set_mode_with_data(RIG *rig, vfo_t vfo, rmode_t mode,
             signed char pd;
             retval = rig2icom_mode(rig, mode, width, &md, &pd); 
             if (retval == RIG_OK) {
-              datamode[1] = pd;
+              datamode[1] = datamode[0] ? pd : 0;
             retval =
                 icom_transaction(rig, C_CTL_MEM, dm_sub_cmd, datamode, 2, ackbuf,
                              &ack_len);
